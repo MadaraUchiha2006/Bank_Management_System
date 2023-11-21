@@ -62,3 +62,27 @@ void create_account(void)
     login();
 }
 
+int login()
+{
+    char username[50];
+    char password[50];
+    FILE *fp;
+    struct data d1;
+    fp = fopen("student.bin", "rb");
+    printf("\n**************************************Account Login**************************************");
+    printf("\n");
+    printf("Enter your Username:");
+    scanf("%s", username);
+    printf("\n");
+    printf("Enter your Password:");
+    scanf("%s", password);
+    while (fread(&d1, sizeof(d1), 1, fp))
+    {
+        if(strcmp(username, d1.username)==0)
+        {
+            display(username);
+        }
+    }
+    fclose(fp);
+}
+
