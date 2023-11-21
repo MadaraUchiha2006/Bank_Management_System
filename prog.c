@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <string.h>
 
+//Functions
 void create_account();
 int login();
 void check_bank_balance(char*);
@@ -11,6 +12,7 @@ void acc_details(char*);
 int logout();
 int val_password();
 
+//Creating mini database to store data about money
 struct money
 {
     char usernameto[50];
@@ -18,6 +20,7 @@ struct money
     int money;
 };
 
+//Creating mini database to store data about user details
 struct pass
 {
     char f_name[50];
@@ -39,6 +42,7 @@ int main()
     char username[50];
     struct pass u1;
 
+    //Welcome screen
     printf("*******************************Welcome to SBI Bank Account*******************************");
     printf("\n");
     printf("Enter your choice:");
@@ -72,6 +76,7 @@ int main()
     return 0;
 }
 
+//Function to create an account
 void create_account(void)
 {
     struct pass u1;  
@@ -124,6 +129,7 @@ void create_account(void)
     login();
 }
 
+//Function to log in after creating an account
 int login()
 {
     int choice;
@@ -150,6 +156,7 @@ int login()
     fclose(fp);
 }
 
+//Function to display the main screen that will be there after a successfull login
 void display(char username1[])
 {
     int choice;
@@ -210,6 +217,7 @@ void display(char username1[])
     fclose(fp);
 }
 
+//Function to check the account details
 void acc_details(char username2[])
 {
     FILE *fp;
@@ -245,6 +253,7 @@ void acc_details(char username2[])
     }
 }
 
+//Function to either transfer money or to get money
 int transfer_money()
 {
     FILE *fp, *fm;
@@ -283,6 +292,7 @@ int transfer_money()
     display(username_from);
 }
 
+//Function to check the transfer money history
 void check_bank_balance(char username2[])
 {
     FILE *fm;
@@ -309,6 +319,7 @@ void check_bank_balance(char username2[])
     display(username2);
 }
 
+//Function to successfully logout
 int logout()
 {
     printf("\n");
