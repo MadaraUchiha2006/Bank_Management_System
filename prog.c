@@ -191,7 +191,7 @@ void display(char username1[])
                 acc_details(username1);
                 break;
             }
-            if(choice==2)
+            else if(choice==2)
             {
                 transfer_money();
                 break;
