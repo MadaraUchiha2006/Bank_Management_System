@@ -114,6 +114,7 @@ void create_account(void)
     printf("\n");
     printf("3:Password must not contain any special case characters.");
     printf("\n");
+    printf("Enter your password:");
     scanf("%d", &u1.password);
     fwrite(&u1, sizeof(u1), 1, fp);
     fclose(fp);
